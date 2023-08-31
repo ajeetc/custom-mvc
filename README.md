@@ -1,3 +1,3 @@
-### PHP custom framwork
+## Custom PHP framwork
 
 This is custom PHP framework
