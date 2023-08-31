@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use App\Framework\App;
+use Framework\App;
 
-include_once __DIR__ . '/../Framework/App.php';
+include_once __DIR__ . '/../../vendor/autoload.php';
 
 $app = new App();
 return $app;
