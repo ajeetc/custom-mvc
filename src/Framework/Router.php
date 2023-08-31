@@ -19,14 +19,16 @@ class Router
      *
      * @param string $method
      * @param string $path
+     * @param array $controller
      * @return void
      */
-    public function add(string $method, string $path): void
+    public function add(string $method, string $path, array $controller): void
     {
         $path = $this->normalizePath($path);
         $this->routes[] = [
             'path' => $path,
-            'method' => strtoupper($method)
+            'method' => strtoupper($method),
+            'controller' => $controller
         ];
     }
 
