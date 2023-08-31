@@ -6,6 +6,7 @@ namespace Framework;
 
 class App
 {
+    /** @var Router Router class object  */
     private Router $router;
 
     public function __construct()
