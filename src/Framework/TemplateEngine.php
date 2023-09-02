@@ -8,7 +8,6 @@ class TemplateEngine
 {
     public function __construct(public string $basePath)
     {
-
     }
 
     public function render(string $path, array $data = [])
@@ -17,12 +16,17 @@ class TemplateEngine
 
         ob_start();
 
-        include "{$this->basePath}/{$path}";
+        $this->resolve($path);
 
         $output = ob_get_contents();
 
         ob_end_clean();
 
         return $output;
+    }
+
+    public function resolve(string $path)
+    {
+        include "{$this->basePath}/{$path}";
     }
 }
