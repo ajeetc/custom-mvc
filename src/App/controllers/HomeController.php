@@ -18,7 +18,8 @@ class HomeController
     public function home()
     {
         echo $this->view->render('index.php', [
-            'title' => 'This is homepage.'
+            'title' => 'This is homepage.',
+            'script' => '<script>alert("test")</script>'
         ]);
     }
 }
