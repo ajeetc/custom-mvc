@@ -13,8 +13,8 @@ class TemplateEngine
 
     public function render(string $path, array $data = [])
     {
-        extract($data);
+        extract($data, EXTR_SKIP);
 
-        include $this->basePath . $path;
+        include "{$this->basePath}/{$path}";
     }
 }
