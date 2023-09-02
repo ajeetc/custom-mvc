@@ -58,10 +58,10 @@ class Router
             ) {
                 continue;
             }
-        }
 
-        [$controller, $function] = $route['controller'];
-        $objController = new $controller();
-        $objController->{$function}();
+            [$controller, $function] = $route['controller'];
+            $objController = new $controller();
+            $objController->{$function}();
+        }
     }
 }

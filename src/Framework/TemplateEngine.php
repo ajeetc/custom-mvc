@@ -16,7 +16,7 @@ class TemplateEngine
 
         ob_start();
 
-        $this->resolve($path);
+        include $this->resolve($path);
 
         $output = ob_get_contents();
 
@@ -27,6 +27,6 @@ class TemplateEngine
 
     public function resolve(string $path)
     {
-        include "{$this->basePath}/{$path}";
+        return "{$this->basePath}/{$path}";
     }
 }
