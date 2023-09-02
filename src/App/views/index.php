@@ -1,3 +1,3 @@
 <?php
 
-echo $title;
+echo "<h1>{$title}</h1>";
