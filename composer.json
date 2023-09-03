@@ -19,5 +19,7 @@
             "email": "ajit.chauhan96@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "symfony/var-dumper": "^6.3"
+    }
 }
