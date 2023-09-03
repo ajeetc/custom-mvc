@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Framework;
 
+use ReflectionClass;
+
 class Container
 {
     private array $definitions = [];
@@ -12,6 +14,11 @@ class Container
     {
         // $this->definitions = array_merge($this->definitions, $newDefinitions);
         $this->definitions = [...$this->definitions, ...$newDefinitions];
-        mdd($this->definitions);
+    }
+
+    public function resolve(string $className)
+    {
+        $objReflectorClass = new ReflectionClass($className);
+        mdd($objReflectorClass);
     }
 }
