@@ -6,9 +6,12 @@ namespace Framework;
 
 class Container
 {
-    public function addDefinition(string $containerDefinitionPath)
+    private array $definitions = [];
+
+    public function addDefinition(array $newDefinitions)
     {
-        $definitions = include $containerDefinitionPath;
-        var_dump($definitions);
+        // $this->definitions = array_merge($this->definitions, $newDefinitions);
+        $this->definitions = [...$this->definitions, ...$newDefinitions];
+        mdd($this->definitions);
     }
 }

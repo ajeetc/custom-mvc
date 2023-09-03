@@ -18,7 +18,8 @@ class App
         $this->container = new Container();
 
         if ($containerDefinitionPath) {
-            $this->container->addDefinition($containerDefinitionPath);
+            $definitions = include $containerDefinitionPath;
+            $this->container->addDefinition($definitions);
         }
     }
 
