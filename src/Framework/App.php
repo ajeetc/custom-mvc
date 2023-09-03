@@ -9,9 +9,17 @@ class App
     /** @var Router Router class object  */
     private Router $router;
 
-    public function __construct()
+    /** @var Container $container */
+    private Container $container;
+
+    public function __construct(string $containerDefinitionPath = null)
     {
         $this->router = new Router();
+        $this->container = new Container();
+
+        if ($containerDefinitionPath) {
+            $this->container->addDefinition($containerDefinitionPath);
+        }
     }
 
     public function run()
